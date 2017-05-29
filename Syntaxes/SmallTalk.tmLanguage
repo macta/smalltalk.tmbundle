@@ -105,6 +105,10 @@
 			<string>\[((\s+|:\w+)*)\|</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#numeric</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>&lt;(?!&lt;|=)|&gt;(?!&lt;|=|&gt;)|&lt;=|&gt;=|=|==|~=|~~|&gt;&gt;|\^</string>
 			<key>name</key>
@@ -308,17 +312,44 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(0[xX][0-9A-Fa-f](?&gt;_?[0-9A-Fa-f])*|\d(?&gt;_?\d)*(\.(?![^[:space:][:digit:]])(?&gt;_?\d)*)?([eE][-+]?\d(?&gt;_?\d)*)?|0[bB][01]+)\b</string>
-			<key>name</key>
-			<string>constant.numeric.smalltalk</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>\b[A-Z]\w*\b</string>
 			<key>name</key>
 			<string>variable.other.constant.smalltalk</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>numeric</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\w)[0-9]+\.[0-9]+s[0-9]*</string>
+					<key>name</key>
+					<string>constant.numeric.float.scaled.smalltalk</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\w)[0-9]+\.[0-9]+([edq]-?[0-9]+)?</string>
+					<key>name</key>
+					<string>constant.numeric.float.smalltalk</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\w)-?[0-9]+r[a-zA-Z0-9]+</string>
+					<key>name</key>
+					<string>constant.numeric.integer.radix.smalltalk</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\w)-?[0-9]+([edq]-?[0-9]+)?</string>
+					<key>name</key>
+					<string>constant.numeric.integer.smalltalk</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.smalltalk</string>
 	<key>uuid</key>
