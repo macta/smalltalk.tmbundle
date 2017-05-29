@@ -245,8 +245,6 @@
 					<string>punctuation.definition.constant.begin.smalltalk</string>
 				</dict>
 			</dict>
-			<key>comment</key>
-			<string>ByteArray Constructor. Unfortunely this dont validate only numbers. TODO.</string>
 			<key>end</key>
 			<string>\]</string>
 			<key>endCaptures</key>
@@ -258,7 +256,22 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>constant.other.bytearray.smalltalk</string>
+			<string>meta.array.byte.smalltalk</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[0-9]+(r[a-zA-Z0-9]+)?</string>
+					<key>name</key>
+					<string>constant.numeric.integer.smalltalk</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s\]]+</string>
+					<key>name</key>
+					<string>invalid.illegal.character-not-allowed-here.smalltalk</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
