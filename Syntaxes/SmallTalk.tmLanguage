@@ -18,6 +18,12 @@
 	<array>
 		<dict>
 			<key>match</key>
+			<string>\$.</string>
+			<key>name</key>
+			<string>constant.character.smalltalk</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\b(class)\b</string>
 			<key>name</key>
 			<string>storage.type.$1.smalltalk</string>
